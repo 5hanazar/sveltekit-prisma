@@ -1,3 +1,7 @@
+## Demo
+
+![demo.gif](https://github.com/5hanazar/sveltekit-prisma/blob/main/demo.gif)
+
 ## Setup
 
 Clone the repo and install dependencies with `npm install` (or `pnpm install` or `yarn`).<br/>
