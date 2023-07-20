@@ -1,28 +1,35 @@
-# create-svelte
+## Setup
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+Clone the repo and install dependencies with `npm install` (or `pnpm install` or `yarn`).<br/>
+Create `.env` file and set the following variables:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
+#MySQL connection URL
+DATABASE_URL="mysql://username:password@localhost:3306/database"
 
-# create a new project in my-app
-npm create svelte@latest my-app
+#JWT secret key
+PRIVATE_KEY="key"
+```
+
+Generate a Prisma migration:
+
+```bash
+npx prisma migrate dev --name init
+npx prisma generate
+```
+
+Seed the database:
+
+```bash
+npx prisma db seed
 ```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start a development server:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
 ## Building
@@ -32,7 +39,3 @@ To create a production version of your app:
 ```bash
 npm run build
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
